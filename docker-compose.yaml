@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+    app:
+      image: library-ms
+      environment:
+        POSTGRES_USER: railsuser
+        POSTGRES_PASSWD: 12345678
+        POSTGRES_HOST: db
+      ports:
+        - 3000:3000
+    db:
+      image: postgres:alpine3.15
+      environment:
+        POSTGRES_PASSWORD: 12345678
